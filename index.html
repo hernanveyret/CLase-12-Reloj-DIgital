@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clase-12 / Ejemplo reloj digital</title>
+    <script>        
+        // Ejemplo que visualiza un reloj digital.
+        
+        function Ver_hora() {
+            var mihora = new Date();
+            var horas = mihora.getHours().toString();
+            if (horas < 10) { horas = "0" + horas};
+            var minutos = mihora.getMinutes().toString();
+            if (minutos < 10) { minutos = "0" + minutos;}
+            var segundos = mihora.getSeconds().toString();
+            if (segundos < 10 ) { segundos = "0"+ segundos ;}
+			document.forms[0].mireloj.value = `${horas}:${minutos}:${segundos}`;
+        }
+    
+    </script>
+
+    <style>
+		
+		@font-face {
+		font-family: letra;
+		src:url('digi.ttf');
+		}
+        input {
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 15px blue, 0 0 30px blue,0 0 40px blue;
+            font-family:letra;
+            font-size: 60px;
+            background-color:black;
+            padding: 10px;
+            border: 10px solid grey;            
+			letter-spacing: 10px;
+    }
+
+    </style>
+    
+
+</head>
+<body>
+ 
+    
+    <form>
+        <p align="center">
+            <input type="text" size="10" name="mireloj">
+        </p>
+    </form>
+    <script>
+        var r = setInterval ("Ver_hora()",500);
+    </script>
+      
+    
+        
+</body>
+</html>
